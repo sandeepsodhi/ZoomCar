@@ -2,6 +2,100 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#63d4cd"
+    >
+    <ImageView
+        android:src="@drawable/logoText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50px"
+        android:id="@+id/imageView1"
+    />
+
+    <TextView
+        android:text="Create your account"
+        android:textColor="#FEFEFB"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+    />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        >
+        <EditText
+            android:id="@+id/fName"
+            android:layout_width="156dp"
+            android:layout_height="45dp"
+            android:hint="  First Name"
+            android:background="#fefefe"
+        />
+        <EditText
+            android:id="@+id/lName"
+            android:layout_width="156dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="5dp"
+            android:hint="  Last Name"
+            android:background="#fefefe"
+        />
+    </LinearLayout>
+
+      <EditText
+            android:id="@+id/email"
+            android:layout_marginTop="6dp"
+            android:layout_width = "320dp"
+            android:layout_height="45dp"
+            android:background = "#FEFEFB"
+            android:hint= "  User name or Email"
+            android:layout_gravity="center"
+         />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_gravity="center"
+            android:layout_height="45dp"
+            android:layout_width = "320dp"
+            android:layout_marginTop = "5dp"
+            android:background = "#FEFEFB"
+            android:hint= "  Password"
+            android:inputType="textPassword"
+         />   
+        <EditText
+            android:id="@+id/phoneNumber"
+            android:layout_width="320dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:background="#fefefe"
+            android:layout_marginTop="5dp"
+            android:hint="  Phone number"
+        />
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="320dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:background="#fefefe"
+            android:layout_marginTop="5dp"
+            android:hint="  Age"
+        />
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content" 
+            android:text="Register"
+            android:layout_gravity="center"
+            android:background="#7c6ceb"
+        android:layout_marginTop="20dp"
+        android:textColor="#fefefe"
+            
+    />
+
+
 
 </LinearLayout>

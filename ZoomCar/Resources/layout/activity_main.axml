@@ -4,14 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/background_light"
+    android:background="#c7a2fc"
         android:weightSum="100"
     >
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_weight="70"        
+        android:layout_weight="70"
+        android:background="#63d4cd"
         >
         <ImageView
             android:layout_width="570px"
@@ -22,14 +23,12 @@
             android:layout_marginTop="-50px"
             android:layout_gravity="center_horizontal|center_vertical" 
         />
-
-
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#6A6B6D"
+        android:background="@android:color/background_light"
         android:id="@+id/linearLayout1"
          android:layout_weight="30" 
         >
@@ -43,7 +42,7 @@
             android:id="@+id/button1"
             android:text="Login"
             android:layout_marginLeft="180px"
-            android:backgroundTint="#73C01A"
+            android:backgroundTint="#63d4cd"
             android:layout_gravity="center"
              android:background = "@drawable/buttonrounded"
             android:textColor="@android:color/background_light"/>
@@ -55,7 +54,7 @@
             android:text="SignUp"
             android:layout_marginLeft="10px"
             android:layout_gravity="center"
-            android:backgroundTint="#73C01A"
+            android:backgroundTint="#63d4cd"
              android:background = "@drawable/buttonrounded"
             android:textColor="@android:color/background_light"
     />
