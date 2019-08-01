@@ -34,20 +34,18 @@
         >
 
         <Button
-            android:text="Button"
             android:layout_width="200px"
             android:layout_height="100px"
             android:minWidth="25px"
             android:minHeight="25px"
             android:id="@+id/button1"
             android:text="Login"
-            android:layout_marginLeft="180px"
-            android:backgroundTint="#63d4cd"
             android:layout_gravity="center"
-             android:background = "@drawable/buttonrounded"
+            android:backgroundTint="#63d4cd"
+            android:layout_marginLeft="170px"
+            android:background = "@drawable/buttonrounded"
             android:textColor="@android:color/background_light"/>
         <Button
-            android:text="Button"
             android:layout_width="200px"
             android:layout_height="100px"
             android:id="@+id/button2"

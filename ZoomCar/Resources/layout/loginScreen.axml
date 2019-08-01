@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop = "6dp"
             android:text="login"
-            android:background = "#7c6ceb"
+            android:background = "#576bfa"
             android:gravity="center"
             android:textColor="#F5F5F5"
     />
@@ -102,7 +102,7 @@
             android:layout_weight="30"
             android:layout_width="130dp"
             android:layout_height="10dp"
-            android:backgroundTint="#7c6ceb"
+            android:backgroundTint="#576bfa"
             android:layout_gravity="center"
 
         />
