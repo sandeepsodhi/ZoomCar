@@ -59,6 +59,7 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomAdapter.cs" />
     <Compile Include="DBHelper.cs" />
     <Compile Include="EditInfo.cs" />
     <Compile Include="Favourites.cs" />
@@ -144,6 +145,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\ListOfItems.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\customListLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
