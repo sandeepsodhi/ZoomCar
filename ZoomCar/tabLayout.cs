@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,8 +16,9 @@ namespace ZoomCar
     [Activity(Label = "tabLayout")]
     public class tabLayout : Activity
     {
+        String id;
         Fragment[] _fragmentsArray;
-        string name = "Welcome to my  App";
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             //set our view from the "main layout" resource
@@ -28,9 +29,11 @@ namespace ZoomCar
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.tabLayout);
 
+            id = Intent.GetStringExtra("id");
+
             _fragmentsArray = new Fragment[]
             {
-                new EditInfo(),
+                new EditInfo(id),
                 new Favourites(),
                 new ListOfItems(),
             };
