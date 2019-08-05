@@ -35,8 +35,9 @@ namespace ZoomCar
                 new ListOfItems(),
             };
 
-            AddTabToActionBar("Edit Info");
-            AddTabToActionBar("car ");
+            AddTabToActionBar("EditInfo");
+            AddTabToActionBar("car");
+            AddTabToActionBar("favo");
         }
 
         void AddTabToActionBar(string tabTitle)

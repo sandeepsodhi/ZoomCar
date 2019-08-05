@@ -26,11 +26,17 @@ namespace ZoomCar
         {
             // Use this to return your custom view for this Fragment
             // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
-            View myView = inflater.Inflate(Resource.Layout.EditInfo, container);
+            View myView = inflater.Inflate(Resource.Layout.EditInfo, container, false);
 
             return myView;
 
 //            return base.OnCreateView(inflater, container, savedInstanceState);
+        }
+        public override void OnResume()
+        {
+            base.OnResume();
+            System.Console.WriteLine("OnResume");
+
         }
     }
 }

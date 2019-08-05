@@ -27,7 +27,7 @@ namespace ZoomCar
             // Use this to return your custom view for this Fragment
             // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
 
-            View myView = inflater.Inflate(Resource.Layout.ListOfItems, container);
+            View myView = inflater.Inflate(Resource.Layout.ListOfItems, container, false);
 
             return myView;
 
