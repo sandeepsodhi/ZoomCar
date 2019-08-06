@@ -62,6 +62,7 @@
     <Compile Include="Cars.cs" />
     <Compile Include="CustomAdapter.cs" />
     <Compile Include="DBHelper.cs" />
+    <Compile Include="EditAdd.cs" />
     <Compile Include="EditInfo.cs" />
     <Compile Include="Favourites.cs" />
     <Compile Include="ListOfItems.cs" />
@@ -177,6 +178,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\car2.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\EditAdd.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
