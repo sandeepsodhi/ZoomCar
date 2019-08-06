@@ -34,8 +34,8 @@ namespace ZoomCar
             _fragmentsArray = new Fragment[]
             {
                 new EditInfo(id),
-                new ListOfItems(),
-                new Favourites(),
+                new ListOfItems(id),
+                new Favourites(id),
                 new PostAdd(id),
             };
 

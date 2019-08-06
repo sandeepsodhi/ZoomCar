@@ -49,6 +49,7 @@ namespace ZoomCar
             myListView = myView.FindViewById<ListView>(Resource.Id.listView1);
             mySearchView = myView.FindViewById<SearchView>(Resource.Id.searchView1);
 
+            myUserList.Clear();
             ICursor result = myDbInstance.selectMyVehicleValue(idU);
 
             while (result.MoveToNext())

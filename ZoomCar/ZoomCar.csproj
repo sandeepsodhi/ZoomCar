@@ -74,6 +74,7 @@
     <Compile Include="SignUp.cs" />
     <Compile Include="tabLayout.cs" />
     <Compile Include="user.cs" />
+    <Compile Include="ViewAdd.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -163,6 +164,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\PostAddScreen.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ViewAdd.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

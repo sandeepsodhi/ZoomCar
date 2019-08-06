@@ -87,7 +87,6 @@ namespace ZoomCar
 
         public user selectMyValues(string id)
         {
-
             String sqlQuery = "Select * from " + TableName + " where " + ColumnID + " = " + id;
 
             ICursor result = myDBObj.RawQuery(sqlQuery, null);
@@ -144,13 +143,10 @@ namespace ZoomCar
 
         public void insertMyValue(string vfname, string vlname, string vemail, string vage, string vpassword)
         {
-
             String insertSQL = "insert into " + TableName + "(" + ColumnfName + "," + ColumnlName + "," + ColumnEmail + "," + columnAge + "," + columnPassword + ") values ('" + vfname + "'" + "," + "'" + vlname + "'," + "'" + vemail + "'," + vage + ",'" + vpassword + "'" + ");";
 
             System.Console.WriteLine("Insert SQL " + insertSQL);
             myDBObj.ExecSQL(insertSQL);
-
-
         }
 
         public void updateData(string id, string vfname, string vlname, string vage, string vpassword, string vemail)
@@ -167,24 +163,18 @@ namespace ZoomCar
 
             System.Console.WriteLine("Delete SQL " + deleteSQL);
             myDBObj.ExecSQL(deleteSQL);
-
         }
 
         public void insertValueVehicleInfo(string vcarName, string vcarModel, string vcarMake, string vcarDesc, string vuserId)
         {
             String insertSQL = "insert into " + TableNameC + "(" + ColumnNameC + "," + ColumnMakeC + "," + ColumnModelC + "," + ColumnDescC + "," + ColumnPostedByC + ") values ('" + vcarName + "'" + "," + "'" + vcarMake + "'," + "'" + vcarModel + "','" + vcarDesc + "'," + Convert.ToInt32(vuserId) + ");";
-
             System.Console.WriteLine("Insert SQL " + insertSQL);
             myDBObj.ExecSQL(insertSQL);
-
-
         }
 
         public ICursor selectMyVehicleValue(string vuserId)
         {
-
             String sqlQuery = "Select * from " + TableNameC + " where " + ColumnPostedByC + " = " + vuserId;
-
             return myDBObj.RawQuery(sqlQuery, null);
             /*
             ICursor result = 
@@ -205,6 +195,19 @@ namespace ZoomCar
                 System.Console.WriteLine(" Value fROM DB --> " + cIDfromDB + "  " + cNamefromDB + "  " + cMakefromDB + "  " + cModelfromDB + "  " + cDescfromDB + "  " + cPostedByfromDB);
             }
             return result;*/
+        }
+
+        public ICursor selectVehicleList(string vuserId)
+        {
+            String sqlQuery = "Select * from " + TableNameC + " where " + ColumnPostedByC + " != " + vuserId;
+            return myDBObj.RawQuery(sqlQuery, null);
+        }
+
+
+        public ICursor selectFavList(string vuserId)
+        {
+            String sqlQuery = "Select * from " + TableNameC + " where " + ColumnPostedByC + " != " + vuserId;
+            return myDBObj.RawQuery(sqlQuery, null);
         }
 
         public override void OnUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)

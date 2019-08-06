@@ -3223,6 +3223,9 @@ namespace ZoomCar
 			// aapt resource value: 0x7f040045
 			public const int tooltip = 2130968645;
 			
+			// aapt resource value: 0x7f040046
+			public const int ViewAdd = 2130968646;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
