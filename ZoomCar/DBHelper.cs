@@ -26,6 +26,21 @@ namespace ZoomCar
         private const string columnAge = "age";
         private const string columnPassword = "password";
 
+        private const string TableNameC = "cars";
+        private const string ColumnIDC = "cId";
+        private const string ColumnNameC = "cName";
+        private const string ColumnModelC = "cModel";
+        private const string ColumnMakeC = "cMake";
+        private const string ColumnDescC = "cDesc";
+        private const string ColumnPostedByC = "cPostedById";
+
+
+        private const string TableNameF = "favourites";
+        private const string ColumnIDF = "fId";
+        private const string ColumnCarIdF = "cId";
+        private const string ColumnUserIdF = "id";
+
+
         public const string createTable = "create table " +
       TableName + "( " + ColumnID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
           + ColumnfName + " text,"
@@ -33,6 +48,21 @@ namespace ZoomCar
           + ColumnEmail + " TEXT,"
           + columnAge + " INT,"
           + columnPassword + " TEXT);";
+
+
+        public const string createTableCars = "create table " +
+        TableNameC + "( " + ColumnIDC + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+          + ColumnNameC + " text,"
+          + ColumnMakeC + " TEXT,"
+          + ColumnModelC + " TEXT,"
+          + ColumnDescC + " TEXT,"
+          + ColumnPostedByC + " INT);";
+
+        public const string createTableFavorites = "create table " +
+        TableNameF + "( " + ColumnIDF + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+          + ColumnCarIdF + " INT,"
+          + ColumnUserIdF + " INT);";
+
 
         SQLiteDatabase myDBObj; // Step: 1 - 5
         Context myContext; // Step: 1 - 6
@@ -47,9 +77,12 @@ namespace ZoomCar
         public override void OnCreate(SQLiteDatabase db)
         {
             System.Console.WriteLine("---------------\n\n\n\n\ncreate table query is: " + createTable);
+            System.Console.WriteLine("---------------\n\n\n\n\ncreate table query is: " + createTableCars);
+            System.Console.WriteLine("---------------\n\n\n\n\ncreate table query is: " + createTableFavorites);
 
-            db.ExecSQL(createTable);  //Step: 4
-
+            db.ExecSQL(createTable);
+            db.ExecSQL(createTableCars);
+            db.ExecSQL(createTableFavorites);
         }
 
         public user selectMyValues(string id)
@@ -135,6 +168,43 @@ namespace ZoomCar
             System.Console.WriteLine("Delete SQL " + deleteSQL);
             myDBObj.ExecSQL(deleteSQL);
 
+        }
+
+        public void insertValueVehicleInfo(string vcarName, string vcarModel, string vcarMake, string vcarDesc, string vuserId)
+        {
+            String insertSQL = "insert into " + TableNameC + "(" + ColumnNameC + "," + ColumnMakeC + "," + ColumnModelC + "," + ColumnDescC + "," + ColumnPostedByC + ") values ('" + vcarName + "'" + "," + "'" + vcarMake + "'," + "'" + vcarModel + "','" + vcarDesc + "'," + Convert.ToInt32(vuserId) + ");";
+
+            System.Console.WriteLine("Insert SQL " + insertSQL);
+            myDBObj.ExecSQL(insertSQL);
+
+
+        }
+
+        public ICursor selectMyVehicleValue(string vuserId)
+        {
+
+            String sqlQuery = "Select * from " + TableNameC + " where " + ColumnPostedByC + " = " + vuserId;
+
+            return myDBObj.RawQuery(sqlQuery, null);
+            /*
+            ICursor result = 
+            Cars carsInfo = null;
+
+            while (result.MoveToNext())
+            {
+
+                var cIDfromDB = result.GetInt(result.GetColumnIndexOrThrow(ColumnIDC));
+                var cNamefromDB = result.GetString(result.GetColumnIndexOrThrow(ColumnNameC));
+                var cMakefromDB = result.GetString(result.GetColumnIndexOrThrow(ColumnMakeC));
+                var cModelfromDB = result.GetString(result.GetColumnIndexOrThrow(ColumnModelC));
+                var cDescfromDB = result.GetString(result.GetColumnIndexOrThrow(ColumnDescC));
+                var cPostedByfromDB = result.GetString(result.GetColumnIndexOrThrow(ColumnPostedByC));
+
+                carsInfo = new Cars(cIDfromDB.ToString(), cNamefromDB, cMakefromDB, cModelfromDB, cDescfromDB, cPostedByfromDB);
+
+                System.Console.WriteLine(" Value fROM DB --> " + cIDfromDB + "  " + cNamefromDB + "  " + cMakefromDB + "  " + cModelfromDB + "  " + cDescfromDB + "  " + cPostedByfromDB);
+            }
+            return result;*/
         }
 
         public override void OnUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)

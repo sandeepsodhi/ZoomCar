@@ -34,13 +34,15 @@ namespace ZoomCar
             _fragmentsArray = new Fragment[]
             {
                 new EditInfo(id),
-                new Favourites(),
                 new ListOfItems(),
+                new Favourites(),
+                new PostAdd(id),
             };
 
-            AddTabToActionBar("EditInfo");
-            AddTabToActionBar("car");
-            AddTabToActionBar("favo");
+            AddTabToActionBar("Edit Info");
+            AddTabToActionBar("Cars List");
+            AddTabToActionBar("Favorites");
+            AddTabToActionBar("My Adds");
         }
 
         void AddTabToActionBar(string tabTitle)

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#63d4cd"
+    >
+    <Button
+        android:layout_marginTop="15dp"
+        android:id="@+id/postAdd"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Post Add"
+        android:background = "@drawable/buttonrounded"
+        android:backgroundTint="#fefefe"
+    />
+    <TextView
+    android:text="My Posted adds"
+    android:textSize="25dp"
+    android:layout_width="match_parent"
+    android:layout_height="200px"
+    android:textColor="#fefefe"
+    android:textStyle="bold"
+    android:gravity="center"
+    />
+
+    <SearchView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchView1"
+        android:background="#fefefe"            
+    />
+
+
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="300px"
+        android:layout_marginTop="20px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="#fefefe"
+        android:background="#fefefe"
+        android:id="@+id/listView1" />
+</LinearLayout>
