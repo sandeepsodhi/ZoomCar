@@ -113,6 +113,18 @@ namespace ZoomCar
         private void MyListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             myAlert = new Android.App.AlertDialog.Builder(Activity);
+
+            var data = myUserList[e.Position];
+            var addId = data.cId;
+
+            i = new Intent(Activity, typeof(ViewAdd));
+            i.PutExtra("cid", addId.ToString());
+            i.PutExtra("uid", idU);
+
+            StartActivity(i);
+
+            /*
+            myAlert = new Android.App.AlertDialog.Builder(Activity);
             var index = e.Position;
             myAlert.SetTitle("Delete");
             myAlert.SetMessage("Do you want to delete this user?");
@@ -122,7 +134,7 @@ namespace ZoomCar
 
             });
             Dialog myDialog = myAlert.Create();
-            myDialog.Show();
+            myDialog.Show(); */
             //    var myValue = stringArray[index];
         }
     }

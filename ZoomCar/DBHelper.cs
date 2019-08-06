@@ -206,8 +206,63 @@ namespace ZoomCar
 
         public ICursor selectFavList(string vuserId)
         {
-            String sqlQuery = "Select * from " + TableNameC + " where " + ColumnPostedByC + " != " + vuserId;
+
+            String sqlQuery = "Select c.* from " + TableNameC + " c, " + TableNameF + " f where f." + ColumnCarIdF + " = c." + ColumnIDC + " and f." + ColumnUserIdF + " = "+ vuserId;
             return myDBObj.RawQuery(sqlQuery, null);
+        }
+
+        public Cars selectAddData(string cId)
+        {
+            String sqlQuery = "Select * from " + TableNameC + " where " + ColumnIDC + " = " + cId;
+
+
+            ICursor result = myDBObj.RawQuery(sqlQuery, null);
+            Cars carsInfo = null;
+
+            while (result.MoveToNext())
+            {
+
+                var cIDfromDB = result.GetInt(result.GetColumnIndexOrThrow(ColumnIDC));
+                var cNamefromDB = result.GetString(result.GetColumnIndexOrThrow(ColumnNameC));
+                var cMakefromDB = result.GetString(result.GetColumnIndexOrThrow(ColumnMakeC));
+                var cModelfromDB = result.GetString(result.GetColumnIndexOrThrow(ColumnModelC));
+                var cDescfromDB = result.GetString(result.GetColumnIndexOrThrow(ColumnDescC));
+                var cPostedByfromDB = result.GetString(result.GetColumnIndexOrThrow(ColumnPostedByC));
+
+                carsInfo = new Cars(cIDfromDB.ToString(), cNamefromDB, cMakefromDB, cModelfromDB, cDescfromDB, cPostedByfromDB);
+
+                System.Console.WriteLine(" Value fROM DB --> " + cIDfromDB + "  " + cNamefromDB + "  " + cMakefromDB + "  " + cModelfromDB + "  " + cDescfromDB + "  " + cPostedByfromDB);
+            }
+            return carsInfo; 
+
+        }
+
+        public void insertIntoFav(string uId, string cId)
+        {
+            String insertSQLFav = "insert into " + TableNameF + "(" + ColumnCarIdF + ", " + ColumnUserIdF + " )  values ('" + cId + "', '" + uId + "' )";
+            myDBObj.ExecSQL(insertSQLFav);
+        }
+
+        public void deleteFromFav(string uId, string cId)
+        {
+            String insertSQLFav = "delete from " + TableNameF + " where " + ColumnCarIdF + " =  '" + cId  + "' and " + ColumnUserIdF + " = '" + uId + "' ";
+            myDBObj.ExecSQL(insertSQLFav);
+        }
+
+        public int checkFav(string uId, string cId)
+        {
+            String chkfav = "select * from " + TableNameF + " where " + ColumnCarIdF + " =  '" + cId + "' and " + ColumnUserIdF + " = '" + uId + "' ";
+
+            ICursor result = myDBObj.RawQuery(chkfav, null);
+
+            if (result.Count > 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         public override void OnUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)

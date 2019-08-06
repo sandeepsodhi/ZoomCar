@@ -2,6 +2,85 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#63d4cd"
+    android:paddingLeft="20dp"
+    >
+    <TextView
+        android:text="Vehicle Details"
+        android:textColor="#FEFEFB"
+        android:textSize="22dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+    />
+    <ImageView
+        android:src="@drawable/car1"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_marginTop="50px"
+        android:id="@+id/imageView1"
+    />
+
+    <TextView
+        android:id="@+id/carName"
+        android:text="Car Name"
+        android:textColor="#FEFEFB"
+        android:textSize="22dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold" 
+    />
+
+    <TextView
+        android:id="@+id/carMake"
+        android:text="Car Make"
+        android:textColor="#FEFEFB"
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    />
+    <TextView
+        android:id="@+id/carModel"
+        android:text="Car Model"
+        android:textColor="#FEFEFB"
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    />
+    <TextView
+        android:id="@+id/carDesc"
+        android:text="More description about the vehicle"
+        android:textColor="#FEFEFB"
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+    />
+
+    <Button
+        android:id="@+id/makeCall"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content" 
+        android:text="Call for Booking"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:textColor="#fefefe"
+        android:background = "@drawable/buttonrounded"
+        android:backgroundTint = "#576bfa"
+
+    />
+    <Button
+        android:id="@+id/addfavBtn"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content" 
+        android:text="Add to favourites"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColor="#fefefe"
+        android:background = "@drawable/buttonrounded"
+        android:backgroundTint = "#576bfa"
+    />
 
 </LinearLayout>

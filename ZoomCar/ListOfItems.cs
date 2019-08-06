@@ -17,12 +17,11 @@ namespace ZoomCar
     public class ListOfItems : Fragment
     {
         String idU;
-        Button postBtn;
         Intent i;
         ListView myListView;
         SearchView mySearchView;
         DBHelper myDbInstance;
-        List<Cars> myUserList = new List<Cars>();
+        List<Cars> myVehicleList = new List<Cars>();
         Android.App.AlertDialog.Builder myAlert;
 
         public ListOfItems(String uId)
@@ -49,7 +48,7 @@ namespace ZoomCar
             myListView = myView.FindViewById<ListView>(Resource.Id.listView1);
             mySearchView = myView.FindViewById<SearchView>(Resource.Id.searchView1);
 
-            myUserList.Clear();
+            myVehicleList.Clear();
             ICursor result = myDbInstance.selectVehicleList(idU);
 
             while (result.MoveToNext())
@@ -62,12 +61,12 @@ namespace ZoomCar
                 var cDescfromDB = result.GetString(result.GetColumnIndexOrThrow("cDesc"));
                 var cPostedByfromDB = result.GetString(result.GetColumnIndexOrThrow("cPostedById"));
 
-                myUserList.Add(new Cars(cIDfromDB.ToString(), cNamefromDB, cMakefromDB, cModelfromDB, cDescfromDB, cPostedByfromDB));
+                myVehicleList.Add(new Cars(cIDfromDB.ToString(), cNamefromDB, cMakefromDB, cModelfromDB, cDescfromDB, cPostedByfromDB));
 
             }
 
             //myAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, stringArray);
-            var myAdapter = new CustomAdapter(Activity, myUserList);
+            var myAdapter = new CustomAdapter(Activity, myVehicleList);
 
             myListView.Adapter = myAdapter;
             //myListView.ItemClick += MyListView_ItemClick;
@@ -96,7 +95,7 @@ namespace ZoomCar
             //    }
             //}
 
-            foreach (Cars carsObj in myUserList)
+            foreach (Cars carsObj in myVehicleList)
             {
                 if (carsObj.cName.Contains(searchValue))
                 {
@@ -114,12 +113,16 @@ namespace ZoomCar
         private void MyListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             myAlert = new Android.App.AlertDialog.Builder(Activity);
-            var index = e.Position;
-            
 
-            
-            
-            
+            var data = myVehicleList[e.Position];
+            var addId = data.cId;
+
+            i = new Intent(Activity, typeof(ViewAdd));
+            i.PutExtra("cid", addId.ToString());
+            i.PutExtra("uid", idU);
+
+            StartActivity(i);
+
             /*
             myAlert.SetTitle("Delete");
             myAlert.SetMessage("Do you want to delete this user?");
