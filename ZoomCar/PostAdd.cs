@@ -119,9 +119,19 @@ namespace ZoomCar
             var index = e.Position;
             myAlert.SetTitle("Delete");
             myAlert.SetMessage("Do you want to delete this user?");
-            myAlert.SetPositiveButton("Delete", delegate {
-                var my = myUserList[e.Position];
-               // var test = my.;
+
+            myAlert.SetNegativeButton("Delete", delegate {
+                var data = myUserList[e.Position];
+                myDbInstance.deleteVehicleValue(idU, data.cId.ToString());
+
+            });
+
+            myAlert.SetPositiveButton("Edit", delegate {
+                var data = myUserList[e.Position];
+                i = new Intent(Activity, typeof(EditAdd));
+                i.PutExtra("cid", data.cId.ToString());
+                i.PutExtra("uid", idU);
+                StartActivity(i);
 
             });
             Dialog myDialog = myAlert.Create();
