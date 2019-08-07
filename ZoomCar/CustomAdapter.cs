@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -48,7 +48,14 @@ namespace ZoomCar
             {
                 myView = myContext.LayoutInflater.Inflate(Resource.Layout.customListLayout, null);
 
-                myView.FindViewById<ImageView>(Resource.Id.image).SetImageResource(Resource.Drawable.logoText);
+                //int id = getResources().getIdentifier(lowerCountryCode, "drawable", getPackageName());
+                //setImageResource(id);
+                // myView.FindViewById<ImageView>(Resource.Id.image).SetImageResource(Resource.Drawable.logoText);
+
+                var resourceId = (int)typeof(Resource.Drawable).GetField(carsObj.cImage).GetValue(null);
+                myView.FindViewById<ImageView>(Resource.Id.image).SetImageResource(resourceId);
+
+
                 myView.FindViewById<TextView>(Resource.Id.name).Text = carsObj.cName;
                 myView.FindViewById<TextView>(Resource.Id.model).Text = "Model: " + carsObj.cModel;
                 myView.FindViewById<TextView>(Resource.Id.make).Text = "Make: " + carsObj.cMake;
