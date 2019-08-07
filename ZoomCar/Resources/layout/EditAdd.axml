@@ -2,6 +2,96 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#63d4cd"
+    >
+    <ImageView
+        android:src="@drawable/logoText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50px"
+        android:id="@+id/imageView1"
+    />
+
+    <TextView
+        android:text="Post a new car"
+        android:textColor="#FEFEFB"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+    />
+    
+      <EditText
+            android:id="@+id/carName"
+            android:layout_marginTop="6dp"
+            android:layout_width = "320dp"
+            android:layout_height="45dp"
+            android:background = "#FEFEFB"
+            android:hint= "  Vehicle Name"
+            android:layout_gravity="center"
+       />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        >
+        <EditText
+            android:id="@+id/model"
+            android:layout_width="156dp"
+            android:layout_height="45dp"
+            android:hint="  Vehicle Model"
+            android:background="#fefefe"
+        />
+        <EditText
+            android:id="@+id/make"
+            android:layout_width="156dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="5dp"
+            android:hint="  Company"
+            android:background="#fefefe"
+        />
+    </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/desc"
+            android:layout_gravity="center" 
+            android:layout_height="215dp"
+            android:layout_width = "320dp"
+            android:layout_marginTop = "5dp"
+            android:background = "#FEFEFB"
+            android:hint= "  Description about vehicle..."
+            android:gravity="top"
+         />   
+        
+        <Button
+            android:id="@+id/post"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content" 
+            android:text="Update"
+            android:layout_gravity="center"
+            android:background="#7c6ceb"
+        android:layout_marginTop="10dp"
+        android:textColor="#fefefe"
+            
+    />
+            
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content" 
+            android:text="Delete"
+            android:layout_gravity="center"
+            android:background="#7c6ceb"
+        android:layout_marginTop="10dp"
+        android:textColor="#fefefe"
+            
+    />
+
 
 </LinearLayout>
