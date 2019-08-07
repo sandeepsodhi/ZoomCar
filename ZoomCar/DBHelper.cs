@@ -172,6 +172,22 @@ namespace ZoomCar
             myDBObj.ExecSQL(insertSQL);
         }
 
+        public void updateVehicleInfo(string vcarName, string vcarModel, string vcarMake, string vcarDesc, string cId)
+        {
+            String insertSQL = "update " + TableNameC + " set " + ColumnNameC + " = '" + vcarName + "'," + ColumnMakeC + " = '" + vcarMake + "',  " + ColumnModelC +  " =  '" + vcarModel + "', " + ColumnDescC + " = '" + vcarDesc + "' where " + ColumnIDC + "  = " + Convert.ToInt32(cId) ;
+            System.Console.WriteLine("Update SQL " + insertSQL);
+            myDBObj.ExecSQL(insertSQL);
+        }
+
+        public void deleteVehicleValue(string uId, string cId)
+        {
+            String deleteSQL = "delete from " + TableNameC + " where " + ColumnIDC + "  = " + Convert.ToInt32(cId);
+            String deleteSQLf = "delete from " + TableNameF + " where " + ColumnUserIdF + " = " + Convert.ToInt32(uId) + " and " + ColumnCarIdF + " = " + Convert.ToInt32(cId);
+            System.Console.WriteLine("Delete SQL " + deleteSQL + "      " + deleteSQLf);
+            myDBObj.ExecSQL(deleteSQL);
+            myDBObj.ExecSQL(deleteSQLf);
+        }
+        
         public ICursor selectMyVehicleValue(string vuserId)
         {
             String sqlQuery = "Select * from " + TableNameC + " where " + ColumnPostedByC + " = " + vuserId;
