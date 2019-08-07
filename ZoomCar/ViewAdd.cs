@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +18,7 @@ namespace ZoomCar
     public class ViewAdd : Activity
     {
         int count;
-        String idC, idU;
+        String idC, idU, number;
         Intent i;
         Button addFavBtn, makeCall;
         DBHelper myDbInstance;
@@ -37,6 +37,9 @@ namespace ZoomCar
             idU = Intent.GetStringExtra("uid");
 
             Cars result = myDbInstance.selectAddData(idC);
+            user userInfo = myDbInstance.selectMyValues(result.cPostedBy);
+
+            number = $"tel:" + userInfo.age;
 
             var cNamefromDB = result.cName; //.GetString(result.GetColumnIndexOrThrow("cName"));
             var cMakefromDB = result.cMake; //.GetString(result.GetColumnIndexOrThrow("cMake"));
@@ -54,6 +57,9 @@ namespace ZoomCar
             carMake.Text = cMakefromDB;
             carModel.Text = "Model: "+ cModelfromDB;
             carDesc.Text = "Description: " + cDescfromDB;
+
+            var resourceId = (int)typeof(Resource.Drawable).GetField(result.cImage).GetValue(null);
+            FindViewById<ImageView>(Resource.Id.imageView1).SetImageResource(resourceId);
 
             count = myDbInstance.checkFav(idU, idC);
             if (count == 0)
@@ -74,7 +80,7 @@ namespace ZoomCar
         {
 
             Intent callIntent = new Intent(Intent.ActionDial);
-            callIntent.SetData(Uri.Parse($"tel:123456789"));
+            callIntent.SetData(Uri.Parse(number));
             StartActivity(callIntent);
 
         }
