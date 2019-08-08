@@ -51,7 +51,7 @@
             android:id="@+id/userName"
             android:hint= "  User Name"
             android:padding="5dp"
-            
+            android:inputType="textEmailAddress"
          />
 
         <EditText

@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace ZoomCar
 {
-    [Activity(Label = "SignUp")]
+    [Activity(Label = "Zoom Drive")]
     public class SignUp : Activity
     {
         EditText fnameE, lnameE, ageE, passwordE, emailE;

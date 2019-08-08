@@ -51,6 +51,7 @@ namespace ZoomCar
             ageEdit = myView.FindViewById<EditText>(Resource.Id.ageEdit);
             passwordEdit = myView.FindViewById<EditText>(Resource.Id.passwordEdit);
 
+            emailEdit.Enabled = false;
             EnabledisableEditBox(false);
 
             myDbInstace = new DBHelper(Activity);
@@ -113,7 +114,6 @@ namespace ZoomCar
         {
             fnameEdit.Enabled = flag;
             lnameEdit.Enabled = flag;
-            emailEdit.Enabled = flag;
             ageEdit.Enabled = flag;
             passwordEdit.Enabled = flag;
         }

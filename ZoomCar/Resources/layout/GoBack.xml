@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>  
+<menu xmlns:android="http://schemas.android.com/apk/res/android">  
+  
+  <!-- Add menu Item 1 -->  
+  <item android:id="@+id/menuItem1"
+       android:title="Go Back" android:showAsAction="always"/>  
+  <item android:id="@+id/menuItem2"  
+         android:title="Log Out"/>  
+</menu> 

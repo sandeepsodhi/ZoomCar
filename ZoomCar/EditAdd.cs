@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace ZoomCar
 {
-    [Activity(Label = "EditAdd")]
+    [Activity(Label = "Zoom Drive")]
     public class EditAdd : Activity
     {
         DBHelper myDbInstace;
@@ -56,9 +56,42 @@ namespace ZoomCar
 
         }
 
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            // set the menu layout on Main Activity  
+            MenuInflater.Inflate(Resource.Layout.GoBack, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.menuItem2:
+                    {
+                        Intent i = new Intent(this, typeof(MainActivity));
+                        StartActivity(i);
+                        return true;
+                    }
+                case Resource.Id.menuItem1:
+                    {
+                        Intent i = new Intent(this, typeof(tabLayout));
+                        i.PutExtra("id", uId);
+
+                        StartActivity(i);
+                        return true;
+                    }
+            }
+
+            return base.OnOptionsItemSelected(item);
+        }
+
         private void DeleteAddBtn_Click(object sender, EventArgs e)
         {
             myDbInstace.deleteVehicleValue(uId, cId);
+            i = new Intent(this, typeof(tabLayout));
+            i.PutExtra("id", uId);
+            StartActivity(i);
         }
 
         private void PostAddBtn_Click(object sender, EventArgs e)

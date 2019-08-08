@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace ZoomCar
 {
-    [Activity(Label = "tabLayout")]
+    [Activity(Label = "Zoom Drive")]
     public class tabLayout : Activity
     {
         String id;
@@ -43,6 +43,28 @@ namespace ZoomCar
             AddTabToActionBar("Cars List");
             AddTabToActionBar("Favorites");
             AddTabToActionBar("My Adds");
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            // set the menu layout on Main Activity  
+            MenuInflater.Inflate(Resource.Layout.mainMenu, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.menuItem1:
+                    {
+                        Intent i = new Intent(this, typeof(MainActivity));
+                        StartActivity(i);
+                        return true;
+                    }
+            }
+
+            return base.OnOptionsItemSelected(item);
         }
 
         void AddTabToActionBar(string tabTitle)

@@ -14,7 +14,7 @@ using Uri = Android.Net.Uri;
 
 namespace ZoomCar
 {
-    [Activity(Label = "ViewAdd")]
+    [Activity(Label = "Zoom Drive")]
     public class ViewAdd : Activity
     {
         int count;
@@ -74,6 +74,35 @@ namespace ZoomCar
             addFavBtn.Click += AddFavBtn_Click;
             makeCall.Click += MakeCall_Click;
 
+        }
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            // set the menu layout on Main Activity  
+            MenuInflater.Inflate(Resource.Layout.GoBack, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.menuItem2:
+                    {
+                        Intent i = new Intent(this, typeof(MainActivity));
+                        StartActivity(i);
+                        return true;
+                    }
+                case Resource.Id.menuItem1:
+                    {
+                        Intent i = new Intent(this, typeof(tabLayout));
+                        i.PutExtra("id", idU);
+
+                        StartActivity(i);
+                        return true;
+                    }
+            }
+
+            return base.OnOptionsItemSelected(item);
         }
 
         private void MakeCall_Click(object sender, EventArgs e)
