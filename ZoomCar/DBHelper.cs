@@ -23,7 +23,7 @@ namespace ZoomCar
         private const string ColumnfName = "fname";
         private const string ColumnlName = "lname";
         private const string ColumnEmail = "emails";
-        private const string columnAge = "age";
+        private const string columnAge = "phoneNumber";
         private const string columnPassword = "password";
 
         private const string TableNameC = "cars";
@@ -32,6 +32,7 @@ namespace ZoomCar
         private const string ColumnModelC = "cModel";
         private const string ColumnMakeC = "cMake";
         private const string ColumnDescC = "cDesc";
+        private const string ColumnImage = "cImage";
         private const string ColumnPostedByC = "cPostedById";
 
 
@@ -46,7 +47,7 @@ namespace ZoomCar
           + ColumnfName + " text,"
           + ColumnlName + " TEXT,"
           + ColumnEmail + " TEXT,"
-          + columnAge + " INT,"
+          + columnAge + " TEXT,"
           + columnPassword + " TEXT);";
 
 
@@ -56,6 +57,7 @@ namespace ZoomCar
           + ColumnMakeC + " TEXT,"
           + ColumnModelC + " TEXT,"
           + ColumnDescC + " TEXT,"
+          + ColumnImage + " TEXT,"
           + ColumnPostedByC + " INT);";
 
         public const string createTableFavorites = "create table " +
@@ -165,9 +167,9 @@ namespace ZoomCar
             myDBObj.ExecSQL(deleteSQL);
         }
 
-        public void insertValueVehicleInfo(string vcarName, string vcarModel, string vcarMake, string vcarDesc, string vuserId)
+        public void insertValueVehicleInfo(string vcarName, string vcarModel, string vcarMake, string vcarDesc, string vcarImage, string vuserId)
         {
-            String insertSQL = "insert into " + TableNameC + "(" + ColumnNameC + "," + ColumnMakeC + "," + ColumnModelC + "," + ColumnDescC + "," + ColumnPostedByC + ") values ('" + vcarName + "'" + "," + "'" + vcarMake + "'," + "'" + vcarModel + "','" + vcarDesc + "'," + Convert.ToInt32(vuserId) + ");";
+            String insertSQL = "insert into " + TableNameC + "(" + ColumnNameC + "," + ColumnMakeC + "," + ColumnModelC + "," + ColumnDescC + "," + ColumnImage + "," + ColumnPostedByC + ") values ('" + vcarName + "'" + "," + "'" + vcarMake + "'," + "'" + vcarModel + "','" + vcarDesc + "','" + vcarImage + "',"  +  Convert.ToInt32(vuserId) + ");";
             System.Console.WriteLine("Insert SQL " + insertSQL);
             myDBObj.ExecSQL(insertSQL);
         }
@@ -243,11 +245,12 @@ namespace ZoomCar
                 var cMakefromDB = result.GetString(result.GetColumnIndexOrThrow(ColumnMakeC));
                 var cModelfromDB = result.GetString(result.GetColumnIndexOrThrow(ColumnModelC));
                 var cDescfromDB = result.GetString(result.GetColumnIndexOrThrow(ColumnDescC));
+                var cImagefromDB = result.GetString(result.GetColumnIndexOrThrow(ColumnImage));
                 var cPostedByfromDB = result.GetString(result.GetColumnIndexOrThrow(ColumnPostedByC));
 
-                carsInfo = new Cars(cIDfromDB.ToString(), cNamefromDB, cMakefromDB, cModelfromDB, cDescfromDB, cPostedByfromDB);
+                carsInfo = new Cars(cIDfromDB.ToString(), cNamefromDB, cMakefromDB, cModelfromDB, cDescfromDB, cImagefromDB, cPostedByfromDB);
 
-                System.Console.WriteLine(" Value fROM DB --> " + cIDfromDB + "  " + cNamefromDB + "  " + cMakefromDB + "  " + cModelfromDB + "  " + cDescfromDB + "  " + cPostedByfromDB);
+                System.Console.WriteLine(" Value fROM DB --> " + cIDfromDB + "  " + cNamefromDB + "  " + cMakefromDB + "  " + cModelfromDB + "  " + cDescfromDB + " " + cImagefromDB + "  " + cPostedByfromDB);
             }
             return carsInfo; 
 

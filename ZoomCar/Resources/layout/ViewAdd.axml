@@ -3,12 +3,12 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#63d4cd"
+    android:background="#FEFEFB"
     android:paddingLeft="20dp"
     >
     <TextView
         android:text="Vehicle Details"
-        android:textColor="#FEFEFB"
+        android:textColor="#000"
         android:textSize="22dp"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
@@ -26,7 +26,8 @@
     <TextView
         android:id="@+id/carName"
         android:text="Car Name"
-        android:textColor="#FEFEFB"
+        android:textColor="#000"
+        android:backgroundTint="#9cf4f7"
         android:textSize="22dp"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
@@ -37,7 +38,7 @@
     <TextView
         android:id="@+id/carMake"
         android:text="Car Make"
-        android:textColor="#FEFEFB"
+        android:textColor="#000"
         android:textSize="18dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,7 +46,7 @@
     <TextView
         android:id="@+id/carModel"
         android:text="Car Model"
-        android:textColor="#FEFEFB"
+        android:textColor="#000"
         android:textSize="18dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,7 +54,7 @@
     <TextView
         android:id="@+id/carDesc"
         android:text="More description about the vehicle"
-        android:textColor="#FEFEFB"
+        android:textColor="#000"
         android:textSize="18dp"
         android:layout_width="match_parent"
         android:layout_height="180dp"
@@ -68,7 +69,6 @@
         android:layout_marginTop="5dp"
         android:textColor="#fefefe"
         android:background = "@drawable/buttonrounded"
-        android:backgroundTint = "#576bfa"
 
     />
     <Button
@@ -80,7 +80,6 @@
         android:layout_marginTop="10dp"
         android:textColor="#fefefe"
         android:background = "@drawable/buttonrounded"
-        android:backgroundTint = "#576bfa"
     />
 
 </LinearLayout>

@@ -53,16 +53,15 @@ namespace ZoomCar
 
             while (result.MoveToNext())
             {
-
                 var cIDfromDB = result.GetInt(result.GetColumnIndexOrThrow("cId"));
                 var cNamefromDB = result.GetString(result.GetColumnIndexOrThrow("cName"));
                 var cMakefromDB = result.GetString(result.GetColumnIndexOrThrow("cMake"));
                 var cModelfromDB = result.GetString(result.GetColumnIndexOrThrow("cModel"));
                 var cDescfromDB = result.GetString(result.GetColumnIndexOrThrow("cDesc"));
+                var cImagefromDB = result.GetString(result.GetColumnIndexOrThrow("cImage"));
                 var cPostedByfromDB = result.GetString(result.GetColumnIndexOrThrow("cPostedById"));
 
-                myVehicleList.Add(new Cars(cIDfromDB.ToString(), cNamefromDB, cMakefromDB, cModelfromDB, cDescfromDB, cPostedByfromDB));
-
+                myVehicleList.Add(new Cars(cIDfromDB.ToString(), cNamefromDB, cMakefromDB, cModelfromDB, cDescfromDB, cImagefromDB, cPostedByfromDB));
             }
 
             //myAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, stringArray);

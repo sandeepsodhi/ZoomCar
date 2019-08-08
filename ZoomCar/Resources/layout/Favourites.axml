@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#63d4cd"
+    android:background="#9cf4f7"
     >
     <TextView
     android:text="Favourites list"
@@ -22,8 +22,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/searchView1"
-        android:background="#fefefe"            
-    />
+        android:background="@drawable/buttonrounded"
+        android:backgroundTint = "#FEFEFB"
+        />
 
 
     <ListView

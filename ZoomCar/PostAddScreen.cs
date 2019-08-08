@@ -45,10 +45,15 @@ namespace ZoomCar
         private void PostAddBtn_Click(object sender, EventArgs e)
         {
             var vcarName = carName.Text;
-            var vcarModel = carModel.Text;
+              var vcarModel = carModel.Text;
             var vcarMake = carMake.Text;
             var vcarDesc = carDesc.Text;
             var vuserId = uId;
+
+            Random r = new Random();
+
+            var vcarImage = "car" + r.Next(1, 9);
+
 
             myAlert = new Android.App.AlertDialog.Builder(this);
 
@@ -71,7 +76,7 @@ namespace ZoomCar
             }
             else
             {
-                myDbInstace.insertValueVehicleInfo(vcarName, vcarModel, vcarMake, vcarDesc, vuserId);
+                myDbInstace.insertValueVehicleInfo(vcarName, vcarModel, vcarMake, vcarDesc, vcarImage ,vuserId);
 
                 Toast.MakeText(this, "Insertion Succesfull!!", ToastLength.Long).Show();
 

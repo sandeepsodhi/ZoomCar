@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="#63d4cd"
+    android:background="#9cf4f7"
     >
     <Button
         android:layout_marginTop="15dp"
@@ -12,8 +12,9 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Post Add"
+        android:textColor="#fefefe"
         android:background = "@drawable/buttonrounded"
-        android:backgroundTint="#fefefe"
+        android:backgroundTint="#00a4ba"
     />
     <TextView
     android:text="My Posted adds"
@@ -31,8 +32,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/searchView1"
-        android:background="#fefefe"            
-    />
+        android:background="@drawable/buttonrounded"
+        android:backgroundTint = "#FEFEFB"
+        />
 
 
     <ListView

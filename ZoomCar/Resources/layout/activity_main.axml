@@ -10,27 +10,35 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_weight="60"
-        android:background="#63d4cd"
+        android:background="#9cf4f7"
         >
         <ImageView
             android:layout_width="1290px"
             android:layout_height="880px"
+            android:layout_marginTop="150dp"
             android:id="@+id/imageView1"
             android:src="@drawable/logo"
-            android:layout_marginLeft="100px"
-            android:layout_marginTop="-50px"
-            android:layout_gravity="center_horizontal|center_vertical" 
+            android:layout_gravity="center_horizontal|bottom" 
         />
+            <TextView
+        android:text="Better than car rental"
+        android:textColor="#fff"
+        android:textSize="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+    />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@android:color/background_light"
+        android:background="#f2ffff"
         android:id="@+id/linearLayout1"
          android:layout_weight="40" 
+        
         >
 
         <Button
@@ -41,7 +49,7 @@
             android:id="@+id/button1"
             android:text="Login"
             android:layout_gravity="center"
-            android:backgroundTint="#63d4cd"
+            android:backgroundTint="#9cf4f7"
             android:layout_marginLeft="300px"
             android:background = "@drawable/buttonrounded"
             android:textColor="@android:color/background_light"/>
@@ -52,7 +60,7 @@
             android:text="SignUp"
             android:layout_marginLeft="50px"
             android:layout_gravity="center"
-            android:backgroundTint="#63d4cd"
+            android:backgroundTint="#9cf4f7"
              android:background = "@drawable/buttonrounded"
             android:textColor="@android:color/background_light"
     />

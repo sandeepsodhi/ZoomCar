@@ -98,6 +98,7 @@ namespace ZoomCar
                 myAlert.SetPositiveButton("Add", delegate {
                     myDbInstance.insertIntoFav(idU, idC);
                     addFavBtn.Text = "Remove from favourites";
+
                 });
             }
             else

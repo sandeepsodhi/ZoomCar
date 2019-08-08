@@ -59,9 +59,10 @@ namespace ZoomCar
                 var cMakefromDB = result.GetString(result.GetColumnIndexOrThrow("cMake"));
                 var cModelfromDB = result.GetString(result.GetColumnIndexOrThrow("cModel"));
                 var cDescfromDB = result.GetString(result.GetColumnIndexOrThrow("cDesc"));
+                var cImagefromDB = result.GetString(result.GetColumnIndexOrThrow("cImage"));
                 var cPostedByfromDB = result.GetString(result.GetColumnIndexOrThrow("cPostedById"));
 
-                myUserList.Add(new Cars(cIDfromDB.ToString(), cNamefromDB, cMakefromDB, cModelfromDB, cDescfromDB, cPostedByfromDB));
+                myUserList.Add(new Cars(cIDfromDB.ToString(), cNamefromDB, cMakefromDB, cModelfromDB, cDescfromDB, cImagefromDB, cPostedByfromDB));
 
             }
 

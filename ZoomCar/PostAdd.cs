@@ -49,6 +49,21 @@ namespace ZoomCar
             myListView = myView.FindViewById<ListView>(Resource.Id.listView1);
             mySearchView = myView.FindViewById<SearchView>(Resource.Id.searchView1);
 
+            refreshData();
+            //myListView.ItemClick += MyListView_ItemClick;
+            myListView.ItemClick += MyListView_ItemClick;
+
+            mySearchView.QueryTextChange += MySearchView_QueryTextChange;
+
+            postBtn.Click += PostBtn_Click;
+
+            return myView;
+
+            //return base.OnCreateView(inflater, container, savedInstanceState);
+        }
+
+        private void refreshData()
+        {
             myUserList.Clear();
             ICursor result = myDbInstance.selectMyVehicleValue(idU);
 
@@ -60,26 +75,16 @@ namespace ZoomCar
                 var cMakefromDB = result.GetString(result.GetColumnIndexOrThrow("cMake"));
                 var cModelfromDB = result.GetString(result.GetColumnIndexOrThrow("cModel"));
                 var cDescfromDB = result.GetString(result.GetColumnIndexOrThrow("cDesc"));
+                var cImagefromDB = result.GetString(result.GetColumnIndexOrThrow("cImage"));
                 var cPostedByfromDB = result.GetString(result.GetColumnIndexOrThrow("cPostedById"));
 
-                myUserList.Add(new Cars(cIDfromDB.ToString(), cNamefromDB, cMakefromDB, cModelfromDB, cDescfromDB, cPostedByfromDB));
-
+                myUserList.Add(new Cars(cIDfromDB.ToString(), cNamefromDB, cMakefromDB, cModelfromDB, cDescfromDB, cImagefromDB, cPostedByfromDB));
             }
 
             //myAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, stringArray);
             var myAdapter = new CustomAdapter(Activity, myUserList);
 
-            myListView.Adapter = myAdapter; 
-            //myListView.ItemClick += MyListView_ItemClick;
-            myListView.ItemClick += MyListView_ItemClick;
-
-            mySearchView.QueryTextChange += MySearchView_QueryTextChange;
-
-            postBtn.Click += PostBtn_Click;
-
-            return myView;
-
-            //return base.OnCreateView(inflater, container, savedInstanceState);
+            myListView.Adapter = myAdapter;
         }
 
         private void MySearchView_QueryTextChange(object sender, SearchView.QueryTextChangeEventArgs e)
@@ -123,7 +128,7 @@ namespace ZoomCar
             myAlert.SetNegativeButton("Delete", delegate {
                 var data = myUserList[e.Position];
                 myDbInstance.deleteVehicleValue(idU, data.cId.ToString());
-
+                refreshData();
             });
 
             myAlert.SetPositiveButton("Edit", delegate {

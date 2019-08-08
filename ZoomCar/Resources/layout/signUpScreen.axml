@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#63d4cd"
+    android:background="#9cf4f7"
     >
     <ImageView
         android:src="@drawable/logoText"
@@ -34,16 +34,18 @@
             android:layout_width="156dp"
             android:layout_height="45dp"
             android:hint="  First Name"
-            android:background="#fefefe"
-        />
+            android:background="@drawable/buttonrounded"
+            android:backgroundTint = "#FEFEFB"
+            />
         <EditText
             android:id="@+id/lName"
             android:layout_width="156dp"
             android:layout_height="45dp"
             android:layout_marginLeft="5dp"
             android:hint="  Last Name"
-            android:background="#fefefe"
-        />
+            android:background="@drawable/buttonrounded"
+            android:backgroundTint = "#FEFEFB"
+            />
     </LinearLayout>
 
       <EditText
@@ -51,7 +53,8 @@
             android:layout_marginTop="6dp"
             android:layout_width = "320dp"
             android:layout_height="45dp"
-            android:background = "#FEFEFB"
+            android:background="@drawable/buttonrounded"
+            android:backgroundTint = "#FEFEFB"
             android:hint= "  User name or Email"
             android:layout_gravity="center"
          />
@@ -62,27 +65,21 @@
             android:layout_height="45dp"
             android:layout_width = "320dp"
             android:layout_marginTop = "5dp"
-            android:background = "#FEFEFB"
+            android:background="@drawable/buttonrounded"
+            android:backgroundTint = "#FEFEFB"
             android:hint= "  Password"
             android:inputType="textPassword"
          />   
-        <EditText
-            android:id="@+id/phoneNumber"
-            android:layout_width="320dp"
-            android:layout_height="45dp"
-            android:layout_gravity="center"
-            android:background="#fefefe"
-            android:layout_marginTop="5dp"
-            android:hint="  Phone number"
-        />
         <EditText
             android:id="@+id/age"
             android:layout_width="320dp"
             android:layout_height="45dp"
             android:layout_gravity="center"
-            android:background="#fefefe"
+            android:background="@drawable/buttonrounded"
+            android:backgroundTint = "#FEFEFB"
             android:layout_marginTop="5dp"
-            android:hint="  Age"
+            android:hint="  Phone Number"
+            android:inputType="phone"
         />
         <Button
             android:id="@+id/btnRegister"
@@ -90,9 +87,9 @@
             android:layout_height="wrap_content" 
             android:text="Register"
             android:layout_gravity="center"
-            android:background="#7c6ceb"
-        android:layout_marginTop="20dp"
-        android:textColor="#fefefe"
+            android:background="@drawable/buttonrounded"
+            android:layout_marginTop="20dp"
+            android:textColor="#fefefe"
             
     />
 

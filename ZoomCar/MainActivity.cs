@@ -7,7 +7,7 @@ using Android.Content;
 
 namespace ZoomCar
 {
-    [Activity(Label = "@string/app_name",  MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : Activity
     {
         Button loginBtn, signUpBtn;

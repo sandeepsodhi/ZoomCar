@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#63d4cd"
+    android:background="#9cf4f7"
     >
     <ImageView
         android:src="@drawable/logoText"
@@ -28,7 +28,8 @@
             android:layout_marginTop="6dp"
             android:layout_width = "320dp"
             android:layout_height="45dp"
-            android:background = "#FEFEFB"
+            android:background="@drawable/buttonrounded"
+            android:backgroundTint = "#FEFEFB"
             android:hint= "  Vehicle Name"
             android:layout_gravity="center"
        />
@@ -45,7 +46,8 @@
             android:layout_width="156dp"
             android:layout_height="45dp"
             android:hint="  Vehicle Model"
-            android:background="#fefefe"
+            android:background="@drawable/buttonrounded"
+            android:backgroundTint = "#FEFEFB"
         />
         <EditText
             android:id="@+id/make"
@@ -53,8 +55,9 @@
             android:layout_height="45dp"
             android:layout_marginLeft="5dp"
             android:hint="  Company"
-            android:background="#fefefe"
-        />
+            android:background="@drawable/buttonrounded"
+            android:backgroundTint = "#FEFEFB"
+            />
     </LinearLayout>
 
 
@@ -64,7 +67,8 @@
             android:layout_height="215dp"
             android:layout_width = "320dp"
             android:layout_marginTop = "5dp"
-            android:background = "#FEFEFB"
+            android:background="@drawable/buttonrounded"
+            android:backgroundTint = "#FEFEFB"
             android:hint= "  Description about vehicle..."
             android:gravity="top"
          />   
@@ -75,9 +79,9 @@
             android:layout_height="wrap_content" 
             android:text="Post"
             android:layout_gravity="center"
-            android:background="#7c6ceb"
-        android:layout_marginTop="20dp"
-        android:textColor="#fefefe"
+            android:background="@drawable/buttonrounded"
+            android:layout_marginTop="20dp"
+            android:textColor="#fefefe"
             
     />
 
